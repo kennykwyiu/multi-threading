@@ -29,7 +29,9 @@ class Producer implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
+            System.out.println("I am the " + i + " Producer");
             storage.put();
+
         }
     }
 }
@@ -43,6 +45,7 @@ class Consumer implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
+            System.out.println("I am the " + i + " Consumer");
             storage.take();
         }
     }
