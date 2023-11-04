@@ -1,7 +1,5 @@
 package org.kenny.jmm;
 
-import com.sun.jdi.PathSearchingVirtualMachine;
-
 import java.util.concurrent.CountDownLatch;
 
 /**
