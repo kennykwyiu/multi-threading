@@ -4,8 +4,8 @@ package org.kenny.jmm;
  *
  */
 public class FieldVisibility {
-    volatile int a = 1;
-    volatile int b = 2;
+    int a = 1;
+    volatile int b = 2; // use volatile keyword, solving case of b = 3; a = 1
 
     private void change() {
         a = 3;
