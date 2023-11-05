@@ -1,7 +1,7 @@
 package org.kenny.singleton;
 
 /**
- * Description: Eager (static constants) (available)
+ * Description: Eager (static constant) (ok to use)
  * Singleton related course content refer to Programmer 001 "Comparison of eight ways to write the Single Example Pattern": https://www.cnblogs.com/zhaoyan001/p/6365064.html
  * Little BMW's Dad - Dream Home "Single Example Pattern (Singleton)": https://www.cnblogs.com/BoyXiao/archive/2010/05/07/1729376.html
  * Jark's Blog "How to write the Singleton pattern correctly": http://wuchong.me/blog/2014/08/28/how-to-correctly-write-singleton-pattern/
