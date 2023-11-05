@@ -7,10 +7,10 @@ import java.util.concurrent.CountDownLatch;
  * Ideas are referenced from https://tech.meituan.com/2014/09/23/java-memory-reordering.html
  */
 public class OutOfOrderExecution {
-    private static int x = 0;
-    private static int y = 0;
-    private static int a = 0;
-    private static int b = 0;
+    private volatile static int x = 0;
+    private volatile static int y = 0;
+    private volatile static int a = 0;
+    private volatile static int b = 0;
 
     public static void main(String[] args) throws InterruptedException {
         int i = 0;
@@ -54,7 +54,7 @@ public class OutOfOrderExecution {
             two.join();
 
             String result = "The " + i + " times: (" + x + ", " + y + ")";
-            if (x == 1 && y == 1) {
+            if (x == 0 && y == 0) {
 
                 System.out.println(result);
                 break;
