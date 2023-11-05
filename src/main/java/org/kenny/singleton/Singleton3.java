@@ -1,7 +1,7 @@
 package org.kenny.singleton;
 
 /**
- * Description: Lazy creation (not thread safety)
+ * Description: Lazy loading (not thread safety)
  */
 public class Singleton3 {
     private static Singleton3 instance;

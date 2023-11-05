@@ -1,7 +1,7 @@
 package org.kenny.singleton;
 
 /**
- * Description: Double validation
+ * Description:
  */
 public class Singleton6 {
     private volatile static Singleton6 instance;
