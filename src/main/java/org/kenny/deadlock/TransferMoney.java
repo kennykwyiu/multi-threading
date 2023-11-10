@@ -27,12 +27,12 @@ public class TransferMoney implements Runnable {
             }
             synchronized (to) {
                 if (from.balance - amount < 0) {
-                    System.out.println("Insufficient balance, transfer failed.");
+                    System.out.println(Thread.currentThread().getName() + " is insufficient balance, transfer failed.");
                 }
                 from.balance -= amount;
 //                to.balance = to.balance + amount;
                 to.balance += amount;
-                System.out.println("Successful transfers " + amount + " dollars.");
+                System.out.println(Thread.currentThread().getName() + " is successful transfers " + amount + " dollars.");
 
             }
         }
