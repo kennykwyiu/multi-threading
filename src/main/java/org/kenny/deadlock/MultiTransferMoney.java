@@ -1,5 +1,9 @@
 package org.kenny.deadlock;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadInfo;
+import java.lang.management.ThreadMXBean;
+import java.util.Objects;
 import java.util.Random;
 
 import static org.kenny.deadlock.TransferMoney.*;
@@ -14,7 +18,7 @@ public class MultiTransferMoney {
     private static final int NUM_ITERATIONS = 1000000;
     private static final int NUM_THREADS = 20;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Random random = new Random();
         Account[] accounts = new Account[NUM_ACCOUNTS];
         for (int i = 0; i < accounts.length; i++) {
@@ -35,5 +39,6 @@ public class MultiTransferMoney {
         for (int i = 0; i < NUM_THREADS; i++) {
             new TransferThread().start();
         }
+
     }
 }
