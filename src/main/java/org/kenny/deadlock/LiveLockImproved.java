@@ -4,6 +4,8 @@ import java.util.Random;
 
 /**
  * Demonstrate the live lock problem
+ * The code randomly decides whether the spouse should eat first,
+ * which helps break the potential circular dependency that can lead to a live lock.
  */
 public class LiveLockImproved {
     static class Spoon {
