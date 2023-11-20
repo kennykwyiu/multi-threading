@@ -3,6 +3,9 @@ package org.kenny.concurrency_tools.threadlocal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 2 threads to print the date
+ */
 public class ThreadLocalNormalUsage00 {
 
     public static void main(String[] args) {
