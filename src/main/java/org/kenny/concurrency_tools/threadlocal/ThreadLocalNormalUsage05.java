@@ -12,7 +12,6 @@ import java.util.concurrent.Executors;
 public class ThreadLocalNormalUsage05 {
     public static ExecutorService threadPool = Executors.newFixedThreadPool(10);
 
-
     public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i < 1000; i++) {
             int finalI = i;

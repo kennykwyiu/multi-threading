@@ -5,13 +5,13 @@ package org.kenny.concurrency_tools.threadlocal;
  */
 public class ThreadLocalNormalUsage06 {
     public static void main(String[] args) {
-        new Service1().process();
+        new WrongPracticeService1().process("Kenny");
     }
 }
 
 class Service1 {
-    public void process() {
-        User user = new User("Alex gor");
+    public void process(String name) {
+        User user = new User(name);
         UserContextHolder.holder.set(user);
         new Service2().process();
     }
@@ -20,14 +20,15 @@ class Service1 {
 class Service2 {
     public void process() {
         User user = UserContextHolder.holder.get();
-        System.out.println("Service2 print out: "+user.name);
+        System.out.println("Service2 print out: " + user.name);
         new Service3().process();
     }
 }
+
 class Service3 {
     public void process() {
         User user = UserContextHolder.holder.get();
-        System.out.println("Service3 print out: "+user.name);
+        System.out.println("Service3 print out: " + user.name);
 
     }
 }
