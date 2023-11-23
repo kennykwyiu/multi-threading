@@ -16,7 +16,6 @@ class WrongPracticeService1 {
         new WrongPracticeService2().process(user);
     }
 }
-
 class WrongPracticeService2 {
     public void process(User user) {
 //        User user = UserContextHolder.holder.get();
@@ -24,11 +23,9 @@ class WrongPracticeService2 {
         new WrongPracticeService3().process(user);
     }
 }
-
 class WrongPracticeService3 {
     public void process(User user) {
 //        User user = UserContextHolder.holder.get();
         System.out.println("Service3 print out: " + user.name);
-
     }
 }
