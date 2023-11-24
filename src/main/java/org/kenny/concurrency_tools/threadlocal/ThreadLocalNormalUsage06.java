@@ -34,7 +34,6 @@ class Service3 {
     public void process() {
         User user = UserContextHolder.holder.get();
         System.out.println("Service3 print out: " + user.name);
-        UserContextHolder.holder.remove();
         new Service4().process();
     }
 }
@@ -42,6 +41,7 @@ class Service4 {
     public void process() {
         User user = UserContextHolder.holder.get();
         System.out.println("Service4 print out: " + user.name);
+        UserContextHolder.holder.remove(); // have to remove threadLocal avoiding OOM
 
     }
 }
