@@ -1,8 +1,7 @@
-package org.kenny.threadpool;
+package org.kenny.adcanced.threadpool;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 

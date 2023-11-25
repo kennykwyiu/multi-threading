@@ -1,4 +1,4 @@
-package org.kenny.concurrency_tools.threadlocal;
+package org.kenny.adcanced.concurrency_tools.threadlocal;
 
 /**
  * Demonstrating high-coupling usage of threadLocal

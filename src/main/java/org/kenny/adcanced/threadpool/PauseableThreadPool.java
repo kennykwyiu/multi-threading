@@ -1,6 +1,5 @@
-package org.kenny.threadpool;
+package org.kenny.adcanced.threadpool;
 
-import java.security.PublicKey;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;

@@ -1,4 +1,4 @@
-package org.kenny.concurrency_tools.threadlocal;
+package org.kenny.adcanced.concurrency_tools.threadlocal;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -6,9 +6,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * 1000 tasks for printing dates with thread pool
+ * Use Lock to Solve Thread Safety Problems
  */
-public class ThreadLocalNormalUsage03 {
+public class ThreadLocalNormalUsage04 {
     public static ExecutorService threadPool = Executors.newFixedThreadPool(10);
     static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
@@ -19,7 +19,7 @@ public class ThreadLocalNormalUsage03 {
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {
-                    String date = new ThreadLocalNormalUsage03().date(finalI);
+                    String date = new ThreadLocalNormalUsage04().date(finalI);
                     System.out.println(date);
                 }
             };
@@ -29,8 +29,13 @@ public class ThreadLocalNormalUsage03 {
     }
 
     public String date(int seconds) {
+
         // Parameters are in milliseconds and are timed from 1970.1.1 00:00:00 GMT.
         Date date = new Date(1000 * seconds);
-        return dateFormat.format(date);
+        String format;
+        synchronized (ThreadLocalNormalUsage04.class) {
+            format = dateFormat.format(date);
+        }
+        return format;
     }
 }

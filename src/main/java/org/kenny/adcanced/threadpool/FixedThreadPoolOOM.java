@@ -1,4 +1,4 @@
-package org.kenny.threadpool;
+package org.kenny.adcanced.threadpool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
